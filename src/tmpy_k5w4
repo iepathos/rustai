@@ -27,6 +27,8 @@ fn main() {
         (vec![1f64, 1f64], vec![1f64]),
     ];
 
+    let allPassed = true;
+
     // create a new neural network by passing a pointer to an array
     // that specifies the number of layers and the number of nodes in each layer
     // in this case we have an input layer with 2 nodes, one hidden layer
@@ -38,7 +40,7 @@ fn main() {
     // see the documentation for the Trainer struct for more info on what each method does
     println!("Training XOR");
     net.train(&xorExamples)
-        .halt_condition( HaltCondition::Epochs(10000) )
+        .halt_condition( HaltCondition::Epochs(30000) )
         .log_interval( Some(100) )
         .momentum( 0.1 )
         .rate( 0.3 )
@@ -55,7 +57,7 @@ fn main() {
 
     println!("Training XNOR");
     net.train(&xnorExamples)
-        .halt_condition( HaltCondition::Epochs(10000) )
+        .halt_condition( HaltCondition::Epochs(30000) )
         .log_interval( Some(100) )
         .momentum( 0.1 )
         .rate( 0.3 )
@@ -73,7 +75,7 @@ fn main() {
 
     println!("Training AND");
     net.train(&andExamples)
-        .halt_condition( HaltCondition::Epochs(10000) )
+        .halt_condition( HaltCondition::Epochs(30000) )
         .log_interval( Some(100) )
         .momentum( 0.1 )
         .rate( 0.3 )
