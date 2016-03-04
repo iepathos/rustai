@@ -1,0 +1,7 @@
+[package]
+name = "rustai"
+version = "0.1.0"
+authors = ["Glen Baker <iepathos@gmail.com>"]
+
+[dependencies]
+nn = { git = "https://github.com/jackm321/RustNN" }
